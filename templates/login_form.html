@@ -1,0 +1,23 @@
+{% if form.errors %}
+<div style="color: red; background-color: #ffe6e6; padding: 10px; margin-bottom: 15px; border: 1px solid red;">
+    <strong>Validation Errors:</strong>
+    <ul>
+        {% for field, field_errors in form.errors.items() %}
+            {% for error in field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<form method="POST" action="/login">
+    {% if form %}
+        {{ form.hidden_tag() }}
+    {% endif %}
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="{{ form.username.data or '' }}">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <input type="submit" value="Login">
+</form>
