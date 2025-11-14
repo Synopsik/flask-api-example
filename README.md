@@ -8,7 +8,7 @@ A Flask application that uses:
 ## Endpoints
 
 * `/index` or `/`: Main entrypoint for application, contains a guide for other endpoints
-* `/setup_db`: Must be used before operating on student data
+* `/init_db`: Must be used before operating on student data
 * `/register`: Used to validate, encrypt, and register student data to the pre-initialized database
 * `/login`: Used to verify that student login information is correct
 * `/students`: Used to return a list of the current student usernames and passwords
