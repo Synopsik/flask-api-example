@@ -19,4 +19,4 @@ A Flask application that uses:
 * Password: At least 8 characters and must be a combination of both letters and numbers.
 
 
-* `SECRET_KEY` must also be set in the `.env` file.
+* `SECRET_KEY` must also be set in the `.env` file. Ensure `.env-sample` is renamed to `.env`.
