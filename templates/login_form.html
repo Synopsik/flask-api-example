@@ -15,9 +15,9 @@
     {% if form %}
         {{ form.hidden_tag() }}
     {% endif %}
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" value="{{ form.username.data or '' }}">
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
-    <input type="submit" value="Login">
+    {{ form.username.label }}
+    {{ form.username() }}
+    {{ form.password.label }}
+    {{ form.password() }}
+    {{ form.submit() }}
 </form>
