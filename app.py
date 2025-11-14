@@ -283,7 +283,8 @@ def close_connection(exception) -> None: # Decorator requires the signature to a
 
     :return: None
     """
-    print(exception)
+    if exception:
+        print(exception)
     # g is a special object Flask uses as a per-request global storage
     db = getattr(g, '_database', None)
     if db is not None:
