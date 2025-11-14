@@ -1,3 +1,6 @@
+# Steven Baar
+# CIS256 Fall 2025
+# Programming Assignment 5 (PA 5)
 from flask import Flask, render_template, g
 from flask_bcrypt import Bcrypt
 from flask_wtf import FlaskForm
@@ -271,7 +274,7 @@ def get_db() -> Connection:
 
 
 @app.teardown_appcontext # Register this function to run automatically when the app context ends
-def close_connection() -> None:
+def close_connection(exception) -> None: # Decorator requires the signature to accept an exception arg
     """
     Close the database connection if it exists.
 
@@ -280,6 +283,7 @@ def close_connection() -> None:
 
     :return: None
     """
+    print(exception)
     # g is a special object Flask uses as a per-request global storage
     db = getattr(g, '_database', None)
     if db is not None:
