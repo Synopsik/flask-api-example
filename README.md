@@ -17,3 +17,6 @@ A Flask application that uses:
 
 * Username: Between 2–25 characters and can only contain letters, numbers, and underscores.
 * Password: At least 8 characters and must be a combination of both letters and numbers.
+
+
+* `SECRET_KEY` must also be set in the `.env` file.
